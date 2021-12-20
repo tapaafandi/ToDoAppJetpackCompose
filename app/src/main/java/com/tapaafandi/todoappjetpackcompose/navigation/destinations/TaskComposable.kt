@@ -3,7 +3,7 @@ package com.tapaafandi.todoappjetpackcompose.navigation.destinations
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
+import androidx.navigation.navArgument
 import com.tapaafandi.todoappjetpackcompose.util.Action
 import com.tapaafandi.todoappjetpackcompose.util.Constant
 import com.tapaafandi.todoappjetpackcompose.util.Constant.TASK_SCREEN

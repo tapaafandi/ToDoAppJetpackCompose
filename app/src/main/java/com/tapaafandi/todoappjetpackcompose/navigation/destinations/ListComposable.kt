@@ -3,13 +3,15 @@ package com.tapaafandi.todoappjetpackcompose.navigation.destinations
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
+import androidx.navigation.navArgument
 import com.tapaafandi.todoappjetpackcompose.ui.screens.list.ListScreen
+import com.tapaafandi.todoappjetpackcompose.ui.viewmodels.SharedViewModel
 import com.tapaafandi.todoappjetpackcompose.util.Constant.LIST_ARGUMENT_KEY
 import com.tapaafandi.todoappjetpackcompose.util.Constant.LIST_SCREEN
 
 fun NavGraphBuilder.listComposable(
-    navigateToTaskScreen: (Int) -> Unit
+    navigateToTaskScreen: (Int) -> Unit,
+    sharedViewModel: SharedViewModel
 ) {
     composable(
         route = LIST_SCREEN,
@@ -17,6 +19,9 @@ fun NavGraphBuilder.listComposable(
             type = NavType.StringType
         })
     ) {
-        ListScreen(navigateToTaskScreen = navigateToTaskScreen)
+        ListScreen(
+            navigateToTaskScreen = navigateToTaskScreen,
+            sharedViewModel = sharedViewModel
+        )
     }
 }
