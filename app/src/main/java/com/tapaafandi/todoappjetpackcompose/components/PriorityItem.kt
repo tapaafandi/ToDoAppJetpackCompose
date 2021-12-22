@@ -30,7 +30,7 @@ fun PriorityItem(priority: Priority) {
                 .padding(start = LARGE_PADDING),
             text = priority.name,
             style = Typography.subtitle1,
-            color = MaterialTheme.colors.surface
+            color = MaterialTheme.colors.onSurface
         )
     }
 }
