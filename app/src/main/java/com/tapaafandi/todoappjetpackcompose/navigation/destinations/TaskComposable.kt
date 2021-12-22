@@ -5,7 +5,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.tapaafandi.todoappjetpackcompose.util.Action
-import com.tapaafandi.todoappjetpackcompose.util.Constant
+import com.tapaafandi.todoappjetpackcompose.util.Constant.TASK_ARGUMENT_KEY
 import com.tapaafandi.todoappjetpackcompose.util.Constant.TASK_SCREEN
 
 fun NavGraphBuilder.taskComposable(
@@ -13,10 +13,10 @@ fun NavGraphBuilder.taskComposable(
 ) {
     composable(
         route = TASK_SCREEN,
-        arguments = listOf(navArgument(Constant.TASK_ARGUMENT_KEY) {
+        arguments = listOf(navArgument(TASK_ARGUMENT_KEY) {
             type = NavType.IntType
         })
-    ) {
-
+    ) { navBackStackEntry ->
+        val taskId = navBackStackEntry.arguments!!.getInt(TASK_ARGUMENT_KEY)
     }
 }

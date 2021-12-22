@@ -19,7 +19,6 @@ fun SetupNavigation(
     val screen = remember(navController) {
         Screens(navController = navController)
     }
-
     NavHost(
         navController = navController,
         startDestination = LIST_SCREEN
