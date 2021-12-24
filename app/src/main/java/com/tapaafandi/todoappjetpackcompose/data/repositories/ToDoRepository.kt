@@ -25,6 +25,10 @@ class ToDoRepository @Inject constructor(private val toDoDao: ToDoDao) {
         toDoDao.deleteTask(toDoTask)
     }
 
+    suspend fun updateTask(toDoTask: ToDoTask) {
+        toDoDao.updateTask(toDoTask)
+    }
+
     fun searchDatabase(searchQuery: String): Flow<List<ToDoTask>> {
         return toDoDao.searchDatabase(searchQuery)
     }
