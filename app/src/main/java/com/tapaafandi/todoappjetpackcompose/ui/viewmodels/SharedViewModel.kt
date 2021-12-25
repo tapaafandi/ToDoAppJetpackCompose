@@ -34,7 +34,6 @@ class SharedViewModel @Inject constructor(
 
     val searchAppBarState: MutableState<SearchAppBarState> =
         mutableStateOf(SearchAppBarState.CLOSED)
-
     val searchTextState: MutableState<String> = mutableStateOf("")
 
     private val _searchedTasks = MutableStateFlow<RequestState<List<ToDoTask>>>(RequestState.Idle)
