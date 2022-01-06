@@ -1,5 +1,6 @@
 package com.tapaafandi.todoappjetpackcompose.ui.screens.list
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -13,6 +14,7 @@ import com.tapaafandi.todoappjetpackcompose.util.Action
 import com.tapaafandi.todoappjetpackcompose.util.SearchAppBarState
 import kotlinx.coroutines.launch
 
+@ExperimentalAnimationApi
 @ExperimentalMaterialApi
 @Composable
 fun ListScreen(
