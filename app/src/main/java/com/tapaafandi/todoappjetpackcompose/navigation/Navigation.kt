@@ -7,9 +7,11 @@ import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.tapaafandi.todoappjetpackcompose.navigation.destinations.listComposable
+import com.tapaafandi.todoappjetpackcompose.navigation.destinations.splashComposable
 import com.tapaafandi.todoappjetpackcompose.navigation.destinations.taskComposable
 import com.tapaafandi.todoappjetpackcompose.ui.viewmodels.SharedViewModel
 import com.tapaafandi.todoappjetpackcompose.util.Constant.LIST_SCREEN
+import com.tapaafandi.todoappjetpackcompose.util.Constant.SPLASH_SCREEN
 
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi
@@ -23,14 +25,17 @@ fun SetupNavigation(
     }
     NavHost(
         navController = navController,
-        startDestination = LIST_SCREEN
+        startDestination = SPLASH_SCREEN
     ) {
+        splashComposable(
+            navigateToListScreen = screen.splash
+        )
         listComposable(
-            navigateToTaskScreen = screen.task,
+            navigateToTaskScreen = screen.list,
             sharedViewModel = sharedViewModel
         )
         taskComposable(
-            navigateToListScreen = screen.list,
+            navigateToListScreen = screen.task,
             sharedViewModel = sharedViewModel
         )
     }
