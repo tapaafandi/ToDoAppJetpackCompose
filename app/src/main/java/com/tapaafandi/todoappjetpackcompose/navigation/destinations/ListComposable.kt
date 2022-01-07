@@ -1,6 +1,5 @@
 package com.tapaafandi.todoappjetpackcompose.navigation.destinations
 
-import android.util.Log
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.LaunchedEffect
