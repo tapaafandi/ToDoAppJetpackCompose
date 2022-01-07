@@ -1,5 +1,6 @@
 package com.tapaafandi.todoappjetpackcompose.ui.viewmodels
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -161,6 +162,7 @@ class SharedViewModel @Inject constructor(
     }
 
     fun handleDatabaseActions(action: Action) {
+        Log.d("handleDatabaseAction", "Triggered")
         when (action) {
             Action.ADD -> addTask()
             Action.UPDATE -> updateTask()
