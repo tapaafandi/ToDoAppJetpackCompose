@@ -30,7 +30,6 @@ import com.tapaafandi.todoappjetpackcompose.ui.theme.*
 import com.tapaafandi.todoappjetpackcompose.ui.viewmodels.SharedViewModel
 import com.tapaafandi.todoappjetpackcompose.util.Action
 import com.tapaafandi.todoappjetpackcompose.util.SearchAppBarState
-import com.tapaafandi.todoappjetpackcompose.util.TrailingIconState
 
 @Composable
 fun ListAppBar(
@@ -221,9 +220,6 @@ fun SearchAppBar(
     onCloseClicked: () -> Unit,
     onSearchClicked: (String) -> Unit
 ) {
-    var trailingIconState by remember {
-        mutableStateOf(TrailingIconState.READY_TO_DELETE)
-    }
 
     Surface(
         modifier = Modifier
@@ -266,19 +262,10 @@ fun SearchAppBar(
             trailingIcon = {
                 IconButton(
                     onClick = {
-                        when (trailingIconState) {
-                            TrailingIconState.READY_TO_DELETE -> {
-                                onTextChange("")
-                                trailingIconState = TrailingIconState.READY_TO_CLOSE
-                            }
-                            TrailingIconState.READY_TO_CLOSE -> {
-                                if (text.isNotEmpty()) {
-                                    onTextChange("")
-                                } else {
-                                    onCloseClicked()
-                                    trailingIconState = TrailingIconState.READY_TO_DELETE
-                                }
-                            }
+                        if (text.isNotEmpty()) {
+                            onTextChange("")
+                        } else {
+                            onCloseClicked()
                         }
                     }
                 ) {
