@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.tapaafandi.todoappjetpackcompose.R
 import com.tapaafandi.todoappjetpackcompose.ui.theme.LOGO_HEIGHT
@@ -53,6 +54,15 @@ fun SplashScreen(
         delay(SPLASH_SCREEN_DELAY)
         navigateToListScreen()
     }
+
+    Splash(offsetState = offsetState, alphaState = alphaState)
+}
+
+@Composable
+fun Splash(
+    offsetState: Dp,
+    alphaState: Float
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -82,7 +92,5 @@ fun getLogo(): Int {
 @Preview
 @Composable
 fun SplashScreenPreview() {
-    SplashScreen(
-        navigateToListScreen = {}
-    )
+    Splash(offsetState = 0.dp, alphaState = 1f)
 }
